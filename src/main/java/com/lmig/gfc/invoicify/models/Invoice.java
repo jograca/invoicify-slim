@@ -39,7 +39,7 @@ public class Invoice {
 	// This needs a one-to-many relationship for a list of invoice line items mapped
 	// by "invoice" with a cascade type of ALL
 	@OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
-	private List<Invoice> invoice;
+	private List<InvoiceLineItem> invoice;
 
 	// This needs getters and setters
 
@@ -75,11 +75,11 @@ public class Invoice {
 		this.invoiceNumber = invoiceNumber;
 	}
 
-	public List<Invoice> getInvoice() {
+	public List<InvoiceLineItem> getInvoice() {
 		return invoice;
 	}
 
-	public void setInvoice(List<Invoice> invoice) {
+	public void setInvoice(List<InvoiceLineItem> invoice) {
 		this.invoice = invoice;
 	}
 

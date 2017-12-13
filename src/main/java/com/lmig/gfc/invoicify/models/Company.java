@@ -2,10 +2,8 @@ package com.lmig.gfc.invoicify.models;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,7 +28,7 @@ public class Company {
 
 	// This needs a list of invoice objects named invoices as one-to-many
 	// relationship mapped by "company"
-	@OneToMany(mappedBy = "company", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "company")
 	private List<Invoice> invoices;
 
 	// Lots of getters and setters
