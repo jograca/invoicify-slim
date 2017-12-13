@@ -18,6 +18,7 @@ import com.lmig.gfc.invoicify.models.InvoiceLineItem;
 import com.lmig.gfc.invoicify.models.User;
 import com.lmig.gfc.invoicify.services.BillingRecordRepository;
 import com.lmig.gfc.invoicify.services.CompanyRepository;
+import com.lmig.gfc.invoicify.services.InvoiceLineItemRepository;
 import com.lmig.gfc.invoicify.services.InvoiceRepository;
 
 @Controller
@@ -27,12 +28,14 @@ public class InvoicesController {
 	private InvoiceRepository invoiceRepo;
 	private CompanyRepository companyRepo;
 	private BillingRecordRepository billingRecordRepo;
+	private InvoiceLineItemRepository invoiceLineItemRepo;
 
 	public InvoicesController(InvoiceRepository invoiceRepo, CompanyRepository companyRepo,
-			BillingRecordRepository billingRecordRepo) {
+			BillingRecordRepository billingRecordRepo, InvoiceLineItemRepository invoiceLineItemRepo) {
 		this.invoiceRepo = invoiceRepo;
 		this.companyRepo = companyRepo;
 		this.billingRecordRepo = billingRecordRepo;
+		this.invoiceLineItemRepo = invoiceLineItemRepo;
 	}
 
 	@GetMapping("")
@@ -114,6 +117,7 @@ public class InvoicesController {
 		invoice.setCreatedBy(user);
 		invoice.setCompany(client);
 		invoiceRepo.save(invoice);
+		invoiceLineItemRepo.save(invoiceLineItems);
 
 		return "redirect:/invoices";
 
