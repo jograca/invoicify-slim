@@ -22,7 +22,7 @@ public abstract class BillingRecord {
 	private Long id;
 
 	// This needs a user named createdBy
-	@Column
+	@ManyToOne
 	private User createdBy;
 
 	// This needs a string named description

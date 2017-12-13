@@ -6,4 +6,6 @@ import com.lmig.gfc.invoicify.models.Invoice;
 
 public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
 
+	public Invoice findById(Long id);
+
 }

@@ -24,6 +24,10 @@ public class RateBasedBillingRecord extends BillingRecord {
 		return rate * quantity;
 	}
 
+	public RateBasedBillingRecord() {
+
+	}
+
 	// This needs getters and setters
 
 	public double getRate() {

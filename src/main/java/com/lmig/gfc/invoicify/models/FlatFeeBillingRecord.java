@@ -20,6 +20,10 @@ public class FlatFeeBillingRecord extends BillingRecord {
 		return amount;
 	}
 
+	public FlatFeeBillingRecord() {
+
+	}
+
 	// This needs getters and setters
 
 	public double getAmount() {

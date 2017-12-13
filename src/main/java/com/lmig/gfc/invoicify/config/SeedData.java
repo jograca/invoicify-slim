@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.lmig.gfc.invoicify.models.Company;
-import com.lmig.gfc.invoicify.models.FlatFeeBillingRecord;
 import com.lmig.gfc.invoicify.models.Invoice;
 import com.lmig.gfc.invoicify.models.User;
 import com.lmig.gfc.invoicify.services.BillingRecordRepository;
@@ -52,20 +51,25 @@ public class SeedData {
 		company.setName("Seed Data Company");
 		companyRepo.save(company);
 
+		Company company1 = new Company();
+		company1.setName("Seed Data Other Company");
+		companyRepo.save(company1);
+
 		// Invoice Seed Data
 		Invoice invoice = new Invoice();
-		invoice.setCompany(company);
+		invoice.setCompany(company1);
 		invoice.setCreatedBy(user);
 		invoice.setInvoiceNumber("12A");
 		invoiceRepo.save(invoice);
 
 		// Flat Fee Billing Record Seed Data
-		FlatFeeBillingRecord ffbr = new FlatFeeBillingRecord();
-		ffbr.setAmount(45.0);
-		ffbr.setClient(company);
-		ffbr.setDescription("Flat Fee Bill for Goods");
-		ffbr.getAmount();
-		flatFeeBillingRepo.save(ffbr);
+
+		// FlatFeeBillingRecord ffbr = new FlatFeeBillingRecord();
+		// ffbr.setAmount(45.0);
+		// ffbr.setClient(company);
+		// ffbr.setDescription("Flat Fee Bill for Goods");
+		// ffbr.setCreatedBy(user);
+		// flatFeeBillingRepo.save(ffbr);
 
 		// Rate Based Billing Seed Data
 	}

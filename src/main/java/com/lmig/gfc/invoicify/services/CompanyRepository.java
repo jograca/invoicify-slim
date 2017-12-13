@@ -6,4 +6,6 @@ import com.lmig.gfc.invoicify.models.Company;
 
 public interface CompanyRepository extends JpaRepository<Company, Long> {
 
+	public Company findById(Long id);
+
 }

@@ -6,4 +6,6 @@ import com.lmig.gfc.invoicify.models.BillingRecord;
 
 public interface BillingRecordRepository extends JpaRepository<BillingRecord, Long> {
 
+	public BillingRecord findById(Long id);
+
 }

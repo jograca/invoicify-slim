@@ -33,6 +33,10 @@ public class InvoiceLineItem {
 	@ManyToOne
 	private Invoice invoice;
 
+	public InvoiceLineItem() {
+
+	}
+
 	// Lots of getters and setters
 
 	public Long getId() {
