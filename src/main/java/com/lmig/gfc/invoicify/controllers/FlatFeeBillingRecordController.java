@@ -9,18 +9,17 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lmig.gfc.invoicify.models.Company;
 import com.lmig.gfc.invoicify.models.FlatFeeBillingRecord;
 import com.lmig.gfc.invoicify.models.User;
+import com.lmig.gfc.invoicify.services.BillingRecordRepository;
 import com.lmig.gfc.invoicify.services.CompanyRepository;
-import com.lmig.gfc.invoicify.services.FlatFeeBillingRecordRepository;
 
 @Controller
 @RequestMapping("/billing-records/flat-fees")
 public class FlatFeeBillingRecordController {
 
-	private FlatFeeBillingRecordRepository flatFeeBillingRepo;
+	private BillingRecordRepository flatFeeBillingRepo;
 	private CompanyRepository companyRepo;
 
-	public FlatFeeBillingRecordController(FlatFeeBillingRecordRepository flatFeeBillingRepo,
-			CompanyRepository companyRepo) {
+	public FlatFeeBillingRecordController(BillingRecordRepository flatFeeBillingRepo, CompanyRepository companyRepo) {
 		this.flatFeeBillingRepo = flatFeeBillingRepo;
 		this.companyRepo = companyRepo;
 	}

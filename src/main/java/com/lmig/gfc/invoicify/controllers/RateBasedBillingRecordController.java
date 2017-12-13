@@ -9,17 +9,17 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lmig.gfc.invoicify.models.Company;
 import com.lmig.gfc.invoicify.models.RateBasedBillingRecord;
 import com.lmig.gfc.invoicify.models.User;
+import com.lmig.gfc.invoicify.services.BillingRecordRepository;
 import com.lmig.gfc.invoicify.services.CompanyRepository;
-import com.lmig.gfc.invoicify.services.RateBasedBillingRecordRepository;
 
 @Controller
 @RequestMapping("/billing-records/rate-baseds")
 public class RateBasedBillingRecordController {
 
-	private RateBasedBillingRecordRepository rateBasedBillingRepo;
+	private BillingRecordRepository rateBasedBillingRepo;
 	private CompanyRepository companyRepo;
 
-	public RateBasedBillingRecordController(RateBasedBillingRecordRepository rateBasedBillingRepo,
+	public RateBasedBillingRecordController(BillingRecordRepository rateBasedBillingRepo,
 			CompanyRepository companyRepo) {
 		this.rateBasedBillingRepo = rateBasedBillingRepo;
 		this.companyRepo = companyRepo;

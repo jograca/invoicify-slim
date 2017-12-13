@@ -8,9 +8,7 @@ import com.lmig.gfc.invoicify.models.Invoice;
 import com.lmig.gfc.invoicify.models.User;
 import com.lmig.gfc.invoicify.services.BillingRecordRepository;
 import com.lmig.gfc.invoicify.services.CompanyRepository;
-import com.lmig.gfc.invoicify.services.FlatFeeBillingRecordRepository;
 import com.lmig.gfc.invoicify.services.InvoiceRepository;
-import com.lmig.gfc.invoicify.services.RateBasedBillingRecordRepository;
 import com.lmig.gfc.invoicify.services.UserRepository;
 
 @Configuration
@@ -20,9 +18,7 @@ public class SeedData {
 			PasswordEncoder encoder, //
 			CompanyRepository companyRepo, //
 			BillingRecordRepository billingRepo, //
-			FlatFeeBillingRecordRepository flatFeeBillingRepo, //
-			InvoiceRepository invoiceRepo, //
-			RateBasedBillingRecordRepository rateBasedRepo) {
+			InvoiceRepository invoiceRepo) {
 
 		String encodedPassword = encoder.encode("password");
 		User user = new User();
@@ -62,16 +58,6 @@ public class SeedData {
 		invoice.setInvoiceNumber("12A");
 		invoiceRepo.save(invoice);
 
-		// Flat Fee Billing Record Seed Data
-
-		// FlatFeeBillingRecord ffbr = new FlatFeeBillingRecord();
-		// ffbr.setAmount(45.0);
-		// ffbr.setClient(company);
-		// ffbr.setDescription("Flat Fee Bill for Goods");
-		// ffbr.setCreatedBy(user);
-		// flatFeeBillingRepo.save(ffbr);
-
-		// Rate Based Billing Seed Data
 	}
 
 }
