@@ -1,5 +1,6 @@
 package com.lmig.gfc.invoicify.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -85,6 +86,11 @@ public class Invoice {
 
 	public void setInvoice(List<InvoiceLineItem> invoice) {
 		this.invoice = invoice;
+	}
+
+	public void setInvoiceLineItems(ArrayList<InvoiceLineItem> invoiceLineItems) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
