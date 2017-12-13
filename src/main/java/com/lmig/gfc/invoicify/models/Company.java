@@ -31,6 +31,10 @@ public class Company {
 	@OneToMany(mappedBy = "company")
 	private List<Invoice> invoices;
 
+	public Company() {
+
+	}
+
 	// Lots of getters and setters
 
 	public Long getId() {

@@ -38,6 +38,10 @@ public abstract class BillingRecord {
 	@ManyToOne
 	private Company client;
 
+	public BillingRecord() {
+
+	}
+
 	// This needs an abstract method that returns a double named getTotal()
 	public abstract double getTotal();
 

@@ -41,6 +41,10 @@ public class Invoice {
 	@OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
 	private List<InvoiceLineItem> invoice;
 
+	public Invoice() {
+
+	}
+
 	// This needs getters and setters
 
 	public Long getId() {
