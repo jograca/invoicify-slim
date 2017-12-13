@@ -58,6 +58,12 @@ public class SeedData {
 		invoice.setInvoiceNumber("12A");
 		invoiceRepo.save(invoice);
 
+		Invoice invoice2 = new Invoice();
+		invoice2.setCompany(company1);
+		invoice2.setCreatedBy(user);
+		invoice2.setInvoiceNumber("12B");
+		invoiceRepo.save(invoice2);
+
 	}
 
 }
