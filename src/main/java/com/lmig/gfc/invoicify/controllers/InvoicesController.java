@@ -101,9 +101,11 @@ public class InvoicesController {
 		// Set the created by to the user
 		// Set the invoice on the invoice line item
 		// Add the invoice line item to the list of invoice line items
-		for (int i = 0; i < billingRecords.size(); i++) {
+		List<BillingRecord> invoiceRecords = billingRecordRepo.findByIdIn(recordIds);
+
+		for (int i = 0; i < invoiceRecords.size(); i++) {
 			InvoiceLineItem invoiceItem = new InvoiceLineItem();
-			invoiceItem.setBillingRecord(billingRecords.get(i));
+			invoiceItem.setBillingRecord(invoiceRecords.get(i));
 			invoiceItem.setCreatedBy(user);
 			invoiceItem.setInvoice(invoice);
 			invoiceLineItems.add(invoiceItem);

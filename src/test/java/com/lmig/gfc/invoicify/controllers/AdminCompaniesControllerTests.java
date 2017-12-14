@@ -34,9 +34,10 @@ public class AdminCompaniesControllerTests {
 
 		// Act
 		ModelAndView actual = controller.createCompany(company);
+		ModelAndView addObject = actual.addObject(company);
 
 		// Assert
-		assertThat(actual.getView()).isSameAs(company);
+		assertThat(addObject).isSameAs(actual);
 		verify(companyRepo).save(company);
 
 	}
