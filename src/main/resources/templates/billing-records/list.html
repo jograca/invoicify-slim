@@ -10,10 +10,10 @@
 	{{> common/_nav }}
 	<form id="create-flat-fee-billing-form" action="/billing-records/flat-fees" method="post">
 		<h2>Make a flat-fee billing record</h2>
-		<input id="flat-fee-bill-number" type="number" step=".01" name="amount" required
+		<input id="flat-fee-bill-amount" type="number" step=".01" name="amount" required
 			placeholder="amount"> <select name="clientId" required>
 			<option value="">Choose one...</option> {{#companies}}
-			<option id="flat-fee-bill-list" value="{{ id }}">{{ name }}</option> {{/companies}}
+			<option id="flat-fee-client" value="{{ id }}">{{ name }}</option> {{/companies}}
 		</select> <input id="flat-fee-bill-description" type="text" name="description" required
 			placeholder="describe it"> <input id="flat-fee-bill-csrf" type="hidden"
 			name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
@@ -22,19 +22,19 @@
 
 	<form id="create-rate-based-billing-form" action="/billing-records/rate-baseds" method="post">
 		<h2>Make a rate-based billing record</h2>
-		<input id="rate-based-bill-number" type="number" step=".01" name="rate" required
-			placeholder="rate"> <input type="number" step=".01"
+		<input id="rate-based-bill-rate" type="number" step=".01" name="rate" required
+			placeholder="rate"> <input id="rate-based-bill-quantity" type="number" step=".01"
 			name="quantity" required placeholder="quantity"> <select
 			name="clientId" required>
 			<option value="">Choose one...</option> {{#companies}}
-			<option id="rate-based-bill-list" value="{{ id }}">{{ name }}</option> {{/companies}}
+			<option id="rate-based-client" value="{{ id }}">{{ name }}</option> {{/companies}}
 		</select> <input id="rate-based-bill-description" type="text" name="description" required
 			placeholder="describe it"> <input id="rate-based-bill-csrf" type="hidden"
 			name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
 		<button>Create me!</button>
 	</form>
 
-	<table id="bill-list">
+	<table>
 		<thead>
 			<tr>
 				<th>Created by</th>
@@ -46,7 +46,7 @@
 				<th>Total</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="bill-list">
 			{{#records}}
 			<tr>
 				<td>{{ createdBy.username }}</td>
