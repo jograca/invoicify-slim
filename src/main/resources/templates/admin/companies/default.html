@@ -15,5 +15,14 @@
 		<input type="hidden" name="{{ _csrf.parameterName }}" value="{{ _csrf.token }}">
 		<button>Create</button>
 	</form>
+	
+	<ul>
+		{{#companies}}
+			<li>{{ name }}</li>
+		{{/companies}}
+	</ul>
+
+	<script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+
 </body>
 </html>
