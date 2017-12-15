@@ -32,8 +32,11 @@ $(function () {
 						<td>$</td>
 						<td> </td>
 						<td>$${data.total}</td>
-					<tr>`
-		 		);
+					<tr>`);
+		 	$('#flat-fee-bill-amount').val('');
+		 	$('#flat-fee-bill-description').val('');
+		 	$('#flat-fee-client').val('');
+		 		
 		});
 	
 	});
@@ -75,8 +78,11 @@ $(function () {
 						<td>$${data.rate}</td>
 						<td>${data.quantity}</td>
 						<td>$${data.total}</td>
-					<tr>`
-		 		);
+					<tr>`);
+		 	$('#rate-based-bill-rate').val('');
+		 	$('#rate-based-bill-quantity').val('');
+		 	$('#rate-based-bill-description').val('');
+		 	$('#rate-based-client').val('');
 		});
 	
 	});
