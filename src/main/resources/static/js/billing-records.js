@@ -33,7 +33,7 @@ $(function () {
 						<td> </td>
 						<td>$${data.total}</td>
 					<tr>`
-			 	);
+		 		);
 		});
 	
 	});
@@ -76,7 +76,7 @@ $(function () {
 						<td>${data.quantity}</td>
 						<td>$${data.total}</td>
 					<tr>`
-			 	);
+		 		);
 		});
 	
 	});
