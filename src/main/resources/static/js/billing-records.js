@@ -35,12 +35,9 @@ $(function () {
 					<tr>`);
 		 	$('#flat-fee-bill-amount').val('');
 		 	$('#flat-fee-bill-description').val('');
-		 	$('#flat-fee-client').val('');
-		 		
+		 	$('#flat-fee-client').val('');	
 		});
-	
 	});
-	
 }); 
 
 $(function () {
@@ -84,7 +81,5 @@ $(function () {
 		 	$('#rate-based-bill-description').val('');
 		 	$('#rate-based-client').val('');
 		});
-	
 	});
-	
 }); 
