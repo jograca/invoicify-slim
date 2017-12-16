@@ -1,6 +1,6 @@
 $(function () {
 	
-	$('#create-flat-fee-billing-form').submit(function (e) {
+	$('#create-flat-fee-billing-form').submit(e => {
 		e.preventDefault();
 		
 		let bill = {
@@ -20,7 +20,7 @@ $(function () {
 			contentType: 'application/json'
 		};
 		$.post(settings)
-		 .done(function (data) {
+		 .done(data => {
 			 console.log(data);
 		 	$('#bill-list')
 		 		.append(
@@ -45,7 +45,7 @@ $(function () {
 
 $(function () {
 	
-	$('#create-rate-based-billing-form').submit(function (e) {
+	$('#create-rate-based-billing-form').submit(e => {
 		e.preventDefault();
 		
 		let bill = {
@@ -66,7 +66,7 @@ $(function () {
 			contentType: 'application/json'
 		};
 		$.post(settings)
-		 .done(function (data) {
+		 .done(data => {
 			 console.log(data);
 		 	$('#bill-list')
 		 		.append(
