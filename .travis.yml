@@ -2,5 +2,5 @@ language: java
 services:
   - postgresql
 before_script:
-  - psql -c 'create user invoicify with superuser'; 
+  - psql -c 'create user invoicify with superuser login password 'invoicify';' 
   - psql -c 'create database invoicify;' -U invoicify
