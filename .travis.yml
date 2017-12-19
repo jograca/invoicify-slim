@@ -3,3 +3,4 @@ services:
   - postgresql
 before_script:
   - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database invoicify;' -U invoicify

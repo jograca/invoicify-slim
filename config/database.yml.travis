@@ -1,2 +1,1 @@
 psql -c 'create user invoicify with superuser login password 'invoicify';
-psql -c 'create database invoicify with owner invoicify;'
