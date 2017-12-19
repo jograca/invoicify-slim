@@ -1,5 +1,12 @@
 language: java
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database invoicify;' -U postgres
+- psql -c 'create database invoicify;' -U postgres
+deploy:
+  provider: heroku
+  api_key: 12cda2fb-87bc-43c2-8e1d-aa21ddcc6c7f
+    secure: Var0iGOuPYEFuib15MTgqGhxbzePAJkGfM+VesLe5rrYNa230Yl2eHUgP+QJpjB6e4n/McRi47M8WXjMG2pRtJ9P13wqqtAA2no1EHpq7QjqVFLA7tKA+shb9zYVwN3AevrdcIGA11OJq1135XnBiUgMmY/WvqmBQU8K5wp4X6voumGd9rmZoXkLWotv/rnhnLTHsFp0CpjGBRmnpzIrNRam03Jd+nqFvpqGP5/sh54qzzIOHRMYNs/uMNFOUO56O649k3AGTBltWYR4Cs24z8ogJqzEiqoEKjhtzwJc4uEQt7Z+tEWpIz0RSVN28mBSnLdD3rJPC240Dkqkm6kAZR2Cjc3iHlEjXCFlWs0DK9d55gfISX30Vi0E44089L4YbpWOZ0UtKtr7WxRcXTB+dyIpWAzFzCNcU6+XOKbZ+3KSs0CsHOl2IoC9srpfwepmbIAvSzWCyYccJmZG4P33Rzwu9CKTw0yRDfm0fUdL33BQxfGcxj2hdzaht/cTroGfiZoeuiHG5Af4dh2Y/yX7+BEwopabx4nm0idFCS4WRee1rEe+V6Et7fIHl45wd2MYKRpRHgS7FRn7ZQetMCmRfU1PC0u7OEoZDyDKYnfppsGkqLkXWCrRezsjWBjtz/gQOBehaIANf/nb3y7BetKiaw5raZkQ3IfuXNfJVr+mNyo=
+  app: invoicify-app-jon-g4c-indy-nov
+  on:
+    repo: jograca/invoicify-slim
