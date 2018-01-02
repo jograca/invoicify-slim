@@ -14,7 +14,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket productApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("«your base package, here»")).build();
+				.apis(RequestHandlerSelectors.basePackage("com.lmig.gfc.invoicify")).build();
 
 	}
 }
