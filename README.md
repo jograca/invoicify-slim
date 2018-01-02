@@ -4,4 +4,8 @@
 
 #### Deployment Details
 
-https://invoicify-app-jon-g4c-indy-nov.herokuapp.com/ 
+https://invoicify-app-jon-g4c-indy-nov.herokuapp.com/
+
+#### API Details
+
+https://invoicify-app-jon-g4c-indy-nov.herokuapp.com/swagger-ui.html
